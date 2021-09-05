@@ -144,6 +144,15 @@ export const containerGenerator: PlopGeneratorConfig = {
       });
     }
 
+    if (data.wantStyledComponents) {
+      actions.push({
+        type: "add",
+        path: `${containerPath}/styled.ts`,
+        templateFile: "./container/styled.ts.hbs",
+        abortOnFail: true,
+      });
+    }
+
     if (data.wantTranslations) {
       actions.push({
         type: "add",
