@@ -1,0 +1,19 @@
+@import 'app/assets/scss/_var.scss';
+
+.header__user-avatar {
+  .header__dropdown {
+    position: absolute;
+    right: 0;
+    top: 2.5rem;
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px rgba(128, 128, 128, 0.15);
+    border-radius: 0.5rem;
+
+    .header__user-name {
+      color: $dark-color;
+      padding: 0.5rem 0 0 1.2rem;
+      cursor: initial;
+    }
+  }
+}

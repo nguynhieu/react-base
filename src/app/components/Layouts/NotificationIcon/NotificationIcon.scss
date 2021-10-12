@@ -1,0 +1,43 @@
+@import 'app/assets/scss/_var.scss';
+
+.header__notification--icon {
+  top: 0;
+  left: 0;
+  position: relative;
+  cursor: pointer;
+
+  svg {
+    &:nth-child(2) {
+      width: 100%;
+      height: 100% !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .header--noti {
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+}
+
+.header__notification--badge.notification--unread {
+  background: $red-color;
+  color: #fff;
+}
+
+.header__notification--badge {
+  position: absolute;
+  top: -2%;
+  right: 0;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: $gray-color;
+  text-align: center;
+  line-height: 0.625rem;
+  font-size: 0.625rem;
+}

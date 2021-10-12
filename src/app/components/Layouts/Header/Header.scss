@@ -1,0 +1,173 @@
+@import 'app/assets/scss/_var.scss';
+
+.header {
+  height: 3.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: $dark-color;
+  padding: 0 1.875rem 0 1.375rem;
+  z-index: 1030;
+
+  &__branch {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 100%;
+
+    .header__logo {
+      width: 2.5625rem;
+      height: 2.5625rem;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.875rem;
+    }
+
+    .header__title {
+      font-weight: 700;
+      font-size: 1.5rem;
+      font-family: 'Neutra text';
+    }
+  }
+
+  &__user {
+    > div:not(:first-child) {
+      margin-left: 1.5rem;
+    }
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .header__notification {
+      position: relative;
+      width: 1.375rem;
+      height: 1.375rem;
+
+      &:hover .notification__dropdown {
+        visibility: visible;
+        opacity: 1;
+        top: 50%;
+      }
+
+      > div,
+      svg {
+        position: absolute;
+      }
+    }
+
+    .notification__dropdown {
+      position: absolute;
+      right: 50%;
+      top: 100%;
+      width: 20.3125rem;
+      background: #fff;
+      box-shadow: 2px 7px 30px rgba(128, 128, 128, 0.25);
+      border-radius: 8px;
+      padding: 1.25rem 0.9375rem;
+      visibility: hidden;
+      opacity: 0.5;
+      transition: 0.2s;
+
+      .dropdown__header {
+        position: relative;
+        width: 100%;
+        height: 1.25rem;
+
+        &--title {
+          font-family: 'Rubik';
+          margin-left: 1.9375rem;
+          font-size: 0.875rem;
+          letter-spacing: -0.165px;
+          font-weight: 500;
+        }
+        &--action {
+          flex: 1;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          padding-right: 0.5rem;
+          cursor: pointer;
+        }
+      }
+
+      .dropdown__body {
+        margin-top: 0.625rem;
+
+        .dropdown__item {
+          &:not(:last-child) {
+            margin-bottom: 0.625rem;
+          }
+
+          width: 19.4375rem;
+          background: $gray-color;
+          border-radius: 8px 0px 0px 8px;
+          padding: 0.8125rem 0.5rem 1.325rem 0.625rem;
+          font-size: 0.75rem;
+          font-weight: 400;
+          position: relative;
+          color: #828282;
+
+          span {
+            position: absolute;
+            bottom: 0.3125rem;
+            right: 1rem;
+            color: $green-color;
+            font-weight: 500;
+          }
+        }
+
+        .dropdown__item.notification--new {
+          background: #dff6ed;
+        }
+      }
+    }
+    &-name {
+      font-size: 0.875rem;
+      font-family: 'Rubik';
+      letter-spacing: -0.165px;
+      color: #fafafa;
+    }
+    &-avatar {
+      background: #fff;
+      border-radius: 50%;
+      width: 1.875rem;
+      height: 1.875rem;
+      border-radius: 50%;
+      position: relative;
+
+      @include md {
+        cursor: pointer;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-logout {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 500;
+
+      span {
+        background: #fff;
+        height: 1.875rem;
+        width: 5.6875rem;
+        border-radius: 1.875rem;
+        line-height: 1.875rem;
+        text-align: center;
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
